@@ -12,7 +12,7 @@
   >
     <router-link to="/" @click="isMenuOpen = false" class="flex flex-row gap-2">
       <img
-        src="@/assets/images/School_Logo.png"
+        src="@/assets/images/Logo.png"
         alt="School Logo Watercolor"
         :class="{ hidden: $route.path === '/' }"
         class="relative z-20 inset-0 w-1/11 object-end md:w-1/15"
@@ -36,6 +36,7 @@
 
     <!-- Menu -->
     <div
+      v-if="$route.path !== '/'"
       :class="[
         'fixed top-0 left-0 w-full flex flex-col justify-center items-center gap-8 text-3xl transition-transform duration-300 ease-in-out md:relative md:h-[4rem] md:w-auto md:bg-transparent md:flex-row md:gap-3 md:text-2xl md:whitespace-nowrap',
         isMenuOpen ? 'h-full' : 'h-0',

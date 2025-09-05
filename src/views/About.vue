@@ -1,7 +1,7 @@
 <template>
   <div v-if="isLoading" class="loading-overlay">
     <img src="" class="loader" alt="Loading..." />
-    <p>Loading...</p>
+    <p>載入中...</p>
   </div>
   <div class="w-screen h-screen bg-rice-500">
     <main class="w-full h-full flex justify-center">

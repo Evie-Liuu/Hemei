@@ -38,13 +38,16 @@
     <main
       class="p-10 flex flex-col justify-center items-center gap-8 max-w-7xl md:mx-auto"
     >
-    
+      <HeaderFilter
+        @update:filteredInfos="updateFilteredInfos"
+        class="flex flex-wrap justify-center items-center gap-4"
+      ></HeaderFilter>
       <section
         class="grid grid-cols-1 md:grid-cols-3 gap-5 p-4 md:p-0 md:gap-5"
       >
         <div
           class="animate-fade-in-up cursor-pointer w-80 md:mx-auto min-h-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col gap-5 hover:scale-105"
-          v-for="info in infos"
+          v-for="info in filteredInfos"
           :key="info.id"
           @click="goToStory(info.id)"
         >
@@ -60,14 +63,21 @@
           </div>
         </div>
       </section>
+      <div
+        v-if="filteredInfos.length === 0"
+        class="text-center text-gray-500 mt-8"
+      >
+        <p>找不到符合條件的故事。</p>
+      </div>
     </main>
   </div>
 </template>
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
-import infos from "@/data/Hemei_story.json";
+import infosData from "@/data/Hemei_story.json";
 import typeTags from "@/data/SDGs_goal.json";
+import HeaderFilter from "@/components/HeaderFilter.vue";
 
 // Import tree images
 import cloud1 from "@/assets/images/Tree_1.png";
@@ -101,6 +111,11 @@ onMounted(() => {
   leftClouds.value = generateClouds(10);
   rightClouds.value = generateClouds(10);
 });
+
+const filteredInfos = ref(infosData);
+const updateFilteredInfos = (data) => {
+  filteredInfos.value = data;
+};
 
 const router = useRouter();
 const goToStory = (id) => {

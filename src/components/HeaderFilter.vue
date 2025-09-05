@@ -104,8 +104,7 @@
 </template>
   
 <script setup>
-import { ref, computed, defineProps, watch } from "vue";
-import infosData from "@/data/Hemei_story.json";
+import { ref, computed, watch, defineEmits } from "vue";
 import typeTags from "@/data/SDGs_goal.json";
 
 // Filter states
@@ -116,7 +115,7 @@ const isTimeDropdownOpen = ref(false);
 const customStartDate = ref("");
 const customEndDate = ref("");
 
-const emits = defineEmits(["update:filteredInfos"]);
+const emits = defineEmits(["update:filters"]);
 
 const sdgOptions = computed(() => typeTags.filter((t) => t.value !== 0));
 
@@ -153,57 +152,18 @@ function setTimeFilter(filter) {
   }
 }
 
-const filteredInfos = computed(() => {
-  let result = infosData;
-
-  // Filter by SDGs
-  if (selectedSdgs.value.length > 0) {
-    result = result.filter(
-      (info) =>
-        info.types &&
-        info.types.some((type) => selectedSdgs.value.includes(type))
-    );
-  }
-
-  // Filter by time
-  if (timeFilter.value !== "all") {
-    const now = new Date();
-    result = result.filter((info) => {
-      if (!info.time || String(info.time).trim() === "") return false;
-      const infoDate = new Date(Number(info.time) * 1000);
-
-      switch (timeFilter.value) {
-        case "day": {
-          const yesterday = new Date();
-          yesterday.setDate(now.getDate() - 1);
-          return infoDate >= yesterday;
-        }
-        case "week": {
-          const lastWeek = new Date();
-          lastWeek.setDate(now.getDate() - 7);
-          return infoDate >= lastWeek;
-        }
-        case "custom": {
-          if (customStartDate.value && customEndDate.value) {
-            const start = new Date(customStartDate.value);
-            start.setHours(0, 0, 0, 0);
-            const end = new Date(customEndDate.value);
-            end.setHours(23, 59, 59, 999);
-            return infoDate >= start && infoDate <= end;
-          }
-          return true;
-        }
-        default:
-          return true;
-      }
+watch(
+  [selectedSdgs, timeFilter, customStartDate, customEndDate],
+  () => {
+    emits("update:filters", {
+      sdgs: selectedSdgs.value,
+      time: timeFilter.value,
+      startDate: customStartDate.value,
+      endDate: customEndDate.value,
     });
-  }
-
-  return result;
-});
-watch(filteredInfos, (newValue) => {
-  emits("update:filteredInfos", newValue);
-});
+  },
+  { deep: true, immediate: true }
+);
 </script>
 <style scoped>
 </style>

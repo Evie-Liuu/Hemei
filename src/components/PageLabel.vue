@@ -1,16 +1,16 @@
 <template>
-  <div class="flex justify-center items-center gap-4 mt-8">
+  <div v-if="totalPages > 1">
     <button
       @click="prevPage"
-      :disabled="currentPage === 1"
+      :disabled="modelValue === 1"
       class="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
     >
       上一頁
     </button>
-    <span>第 {{ currentPage }} / {{ totalPages }} 頁</span>
+    <span>第 {{ modelValue }} / {{ totalPages }} 頁</span>
     <button
       @click="nextPage"
-      :disabled="currentPage === totalPages"
+      :disabled="modelValue === totalPages"
       class="px-4 py-2 bg-gray-300 rounded-md disabled:opacity-50"
     >
       下一頁
@@ -21,40 +21,36 @@
 import { computed, defineProps, defineEmits } from "vue";
 
 const props = defineProps({
-  filteredInfo: {
-    type: Object,
-    default: () => ({}),
+  totalItems: {
+    type: Number,
+    required: true,
+  },
+  itemsPerPage: {
+    type: Number,
+    default: 6,
+  },
+  modelValue: {
+    type: Number,
+    required: true,
   },
 });
 
-const emits = defineEmits(["update:paginatedInfo"]);
-watch(paginatedInfo, (newValue) => {
-  const numericValue = Number(newValue);
-  emits("update:paginatedInfo", numericValue);
-});
-
-const currentPage = ref(1);
-const itemsPerPage = 3;
+const emits = defineEmits(["update:modelValue"]);
 
 const totalPages = computed(() => {
-  return Math.ceil(props.filteredInfo.length / itemsPerPage);
-});
-
-const paginatedInfo = computed(() => {
-  const startIndex = (currentPage.value - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  return props.filteredInfo.slice(startIndex, endIndex);
+  if (props.totalItems === 0) return 1;
+  return Math.ceil(props.totalItems / props.itemsPerPage);
 });
 
 const nextPage = () => {
-  if (currentPage.value < totalPages.value) {
-    currentPage.value++;
+  if (props.modelValue < totalPages.value) {
+    emits("update:modelValue", props.modelValue + 1);
   }
 };
 
 const prevPage = () => {
-  if (currentPage.value > 1) {
-    currentPage.value--;
+  if (props.modelValue > 1) {
+    emits("update:modelValue", props.modelValue - 1);
   }
 };
 </script>

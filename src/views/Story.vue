@@ -39,7 +39,7 @@
       class="p-10 flex flex-col justify-center items-center gap-8 max-w-7xl md:mx-auto"
     >
       <HeaderFilter
-        @update:filteredInfos="updateFilteredInfos"
+        @update:filters="handleFilterUpdate"
         class="flex flex-wrap justify-center items-center gap-4"
       ></HeaderFilter>
       <section
@@ -47,7 +47,7 @@
       >
         <div
           class="animate-fade-in-up cursor-pointer w-80 md:mx-auto min-h-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col gap-5 hover:scale-105"
-          v-for="info in filteredInfos"
+          v-for="info in paginatedInfos"
           :key="info.id"
           @click="goToStory(info.id)"
         >
@@ -64,11 +64,17 @@
         </div>
       </section>
       <div
-        v-if="filteredInfos.length === 0"
+        v-if="allFilteredInfos.length === 0"
         class="text-center text-gray-500 mt-8"
       >
         <p>找不到符合條件的故事。</p>
       </div>
+      <PageLabel
+        class="flex justify-center items-center gap-4 mt-8"
+        :totalItems="allFilteredInfos.length"
+        :itemsPerPage="itemsPerPage"
+        v-model="currentPage"
+      ></PageLabel>
     </main>
   </div>
 </template>
@@ -78,6 +84,7 @@ import { useRouter } from "vue-router";
 import infosData from "@/data/Hemei_story.json";
 import typeTags from "@/data/SDGs_goal.json";
 import HeaderFilter from "@/components/HeaderFilter.vue";
+import PageLabel from "@/components/PageLabel.vue";
 
 // Import tree images
 import cloud1 from "@/assets/images/Tree_1.png";
@@ -112,10 +119,71 @@ onMounted(() => {
   rightClouds.value = generateClouds(10);
 });
 
-const filteredInfos = ref(infosData);
-const updateFilteredInfos = (data) => {
-  filteredInfos.value = data;
+const allInfos = ref(infosData);
+const filters = ref({
+  sdgs: [],
+  time: "all",
+  startDate: "",
+  endDate: "",
+});
+const currentPage = ref(1);
+const itemsPerPage = 6;
+
+const handleFilterUpdate = (newFilters) => {
+  filters.value = newFilters;
+  currentPage.value = 1; // Reset page when filters change
 };
+
+const allFilteredInfos = computed(() => {
+  let result = allInfos.value;
+
+  // Filter by SDGs
+  if (filters.value.sdgs.length > 0) {
+    result = result.filter(
+      (info) =>
+        info.types &&
+        info.types.some((type) => filters.value.sdgs.includes(type))
+    );
+  }
+
+  // Filter by time
+  if (filters.value.time !== "all") {
+    const now = new Date();
+    result = result.filter((info) => {
+      if (!info.time || String(info.time).trim() === "") return false;
+      const infoDate = new Date(Number(info.time) * 1000);
+
+      if (filters.value.time === "day") {
+        const yesterday = new Date();
+        yesterday.setDate(now.getDate() - 1);
+        return infoDate >= yesterday;
+      } else if (filters.value.time === "week") {
+        const lastWeek = new Date();
+        lastWeek.setDate(now.getDate() - 7);
+        return infoDate >= lastWeek;
+      } else if (
+        filters.value.time === "custom" &&
+        filters.value.startDate &&
+        filters.value.endDate
+      ) {
+        const start = new Date(filters.value.startDate);
+        start.setHours(0, 0, 0, 0);
+        const end = new Date(filters.value.endDate);
+        end.setHours(23, 59, 59, 999);
+        return infoDate >= start && infoDate <= end;
+      }
+      return true; // Should not happen if time is not 'all', but as a fallback
+    });
+  }
+
+  return result;
+});
+
+const paginatedInfos = computed(() => {
+  const startIndex = (currentPage.value - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  return allFilteredInfos.value.slice(startIndex, endIndex);
+});
 
 const router = useRouter();
 const goToStory = (id) => {

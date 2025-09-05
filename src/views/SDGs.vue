@@ -1,5 +1,5 @@
 <template>
-  <div class="page-background h-full">
+  <div class="page-background">
     <header class="pt-25 w-full shadow-md z-10 bg-header text-rice-500">
       <div class="container mx-auto flex items-center p-4">
         <div class="w-1/3">
@@ -15,7 +15,7 @@
       </div>
     </header>
     <main
-      class="grid grid-cols-1 md:grid-cols-3 gap-5 p-4 md:p-20 pt-10 text-center text-3xl md:min-h-220"
+      class="grid grid-cols-1 md:grid-cols-3 gap-5 p-4 md:px-50 pt-10 text-center text-3xl md:min-h-220"
     >
       <div
         class="group col-span-1 md:col-span-1 h-48 md:h-auto border p-4 bg-[url(@/assets/images/cover_120.jpg)] bg-cover bg-top overflow-hidden flex items-center justify-center animate-fade-in-left animate-delay-100 text-white text-shadow-3d border-black"

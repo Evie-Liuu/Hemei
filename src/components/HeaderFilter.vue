@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- SDGs Filter -->
-    <div class="relative">
+    <div class="relative" ref="sdgDropdownRef">
       <button
         @click="isSdgDropdownOpen = !isSdgDropdownOpen"
         class="p-1 px-4 rounded-full bg-gray-500 text-brown-100 font-bold min-w-[150px] text-left flex justify-between items-center gap-2"
@@ -44,7 +44,7 @@
     </div>
 
     <!-- Time Filter -->
-    <div class="relative">
+    <div class="relative" ref="timeDropdownRef">
       <button
         @click="isTimeDropdownOpen = !isTimeDropdownOpen"
         class="p-1 px-4 rounded-full bg-gray-500 text-brown-100 font-bold min-w-[150px] text-left flex justify-between items-center gap-2"
@@ -106,6 +106,7 @@
 <script setup>
 import { ref, computed, watch, defineEmits } from "vue";
 import typeTags from "@/data/SDGs_goal.json";
+import { useClickOutside } from "@/composables/useClickOutside.js";
 
 // Filter states
 const selectedSdgs = ref([]);
@@ -114,6 +115,18 @@ const timeFilter = ref("all");
 const isTimeDropdownOpen = ref(false);
 const customStartDate = ref("");
 const customEndDate = ref("");
+
+// Template refs for dropdowns
+const sdgDropdownRef = ref(null);
+const timeDropdownRef = ref(null);
+
+// Close dropdowns when clicking outside
+useClickOutside(sdgDropdownRef, () => {
+  isSdgDropdownOpen.value = false;
+});
+useClickOutside(timeDropdownRef, () => {
+  isTimeDropdownOpen.value = false;
+});
 
 const emits = defineEmits(["update:filters"]);
 

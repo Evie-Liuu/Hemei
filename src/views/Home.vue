@@ -1,6 +1,6 @@
 <template>
   <main
-    class="grid grid-flow-col grid-rows-2 lg:pt-20 h-screen w-screen text-center bg-[url('@/assets/images/Phone/Background_All_Phone.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Main-Page_Base_All.png')]"
+    class="grid grid-flow-col grid-rows-2 lg:pt-20 h-screen w-screen text-center bg-[url('@/assets/images/Mobile/Background_All_Phone.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Main-Page_Base_All.png')]"
   >
     <!-- Cover -->
     <section class="row-span-3">

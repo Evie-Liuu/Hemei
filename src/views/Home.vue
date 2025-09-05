@@ -1,10 +1,14 @@
 <template>
   <main
-    class="grid grid-flow-col grid-rows-2 h-screen w-screen text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
+    class="relative grid grid-flow-col grid-rows-2 h-screen w-screen text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
   >
-    <img src="@/assets/images/Frame.png" alt="Frame" class="hidden lg:block" />
+    <img
+      src="@/assets/images/Frame.png"
+      alt="Top Frame"
+      class="hidden lg:block absolute -top-3 left-0 w-full h-10 object-cover z-20 pointer-events-none"
+    />
     <!-- Cover -->
-    <section class="row-span-3">
+    <section class="row-span-2">
       <div
         :class="[
           'transition-all duration-1000 ease-out',
@@ -92,7 +96,11 @@
         >
       </div>
     </section>
-    <img src="@/assets/images/Frame.png" alt="Frame" class="hidden lg:block rotate-180" />
+    <img
+      src="@/assets/images/Frame.png"
+      alt="Bottom Frame"
+      class="hidden lg:block absolute -bottom-3 left-0 w-full h-10 object-cover rotate-180 z-20 pointer-events-none"
+    />
 
     <!-- Menu Buttons for Mobile -->
     <div></div>

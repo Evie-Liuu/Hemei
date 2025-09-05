@@ -1,6 +1,6 @@
 <template>
   <main
-    class="relative grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 h-screen w-screen text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
+    class="relative overflow-y-auto lg:overflow-y-hidden grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
   >
     <img
       src="@/assets/images/Frame.png"
@@ -34,7 +34,7 @@
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-full',
         ]"
-        class="font-bold text-brown-500 flex flex-col items-center lg:gap-5 lg:flex-row lg:justify-start w-full"
+        class="flex items-center justify-center lg:gap-5 w-full"
       >
         <picture>
           <img
@@ -52,7 +52,9 @@
     </section>
     <!-- Menu Buttons -->
     <section class="lg:col-span-1 lg:-ml-48 z-10">
-      <div class="flex flex-col pt-12 lg:pt-0 lg:gap-5 items-center justify-center">
+      <div
+        class="flex flex-col pt-12 lg:pt-0 lg:gap-5 items-center justify-center"
+      >
         <router-link
           to="/about"
           class="relative"

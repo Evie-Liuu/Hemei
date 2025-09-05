@@ -1,6 +1,6 @@
 <template>
   <main
-    class="relative grid grid-flow-col grid-rows-2 h-screen w-screen text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
+    class="relative grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 h-screen w-screen text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
   >
     <img
       src="@/assets/images/Frame.png"
@@ -8,7 +8,7 @@
       class="hidden lg:block absolute -top-3 left-0 w-full h-10 object-cover z-20 pointer-events-none"
     />
     <!-- Cover -->
-    <section class="row-span-2">
+    <section class="lg:row-span-2">
       <div
         :class="[
           'transition-all duration-1000 ease-out',
@@ -20,13 +20,13 @@
       >
         <img
           src="@/assets/images/ChinesePaintingRing.png"
-          class="pointer-events-none select-none max-w-55 lg:max-w-350"
+          class="pointer-events-none select-none max-w-115 lg:max-w-350"
           alt="Hemei_cover"
         />
       </div>
     </section>
     <!-- School Title -->
-    <section class="col-span-1 lg:-ml-48 z-10">
+    <section class="lg:col-span-1 lg:-ml-48 z-10">
       <div
         :class="[
           'transition-all duration-1000 ease-out',
@@ -39,15 +39,20 @@
         <picture>
           <img
             src="@/assets/images/Text_H.png"
-            class="pointer-events-none select-none max-w-25 lg:max-w-50"
+            class="hidden lg:block pointer-events-none select-none max-w-50"
+            alt="Hemei_Text_H"
+          />
+          <img
+            src="@/assets/images/Mobile/Text_H1.png"
+            class="block lg:hidden pointer-events-none select-none max-w-75"
             alt="Hemei_Text_H"
           />
         </picture>
       </div>
     </section>
     <!-- Menu Buttons -->
-    <section class="col-span-1 row-span-1 lg:-ml-48 z-10">
-      <div class="flex flex-col gap-5 items-center justify-center">
+    <section class="lg:col-span-1 lg:-ml-48 z-10">
+      <div class="flex flex-col pt-12 lg:pt-0 lg:gap-5 items-center justify-center">
         <router-link
           to="/about"
           class="relative"
@@ -101,9 +106,6 @@
       alt="Bottom Frame"
       class="hidden lg:block absolute -bottom-3 left-0 w-full h-10 object-cover rotate-180 z-20 pointer-events-none"
     />
-
-    <!-- Menu Buttons for Mobile -->
-    <div></div>
   </main>
 </template>
 <script setup>

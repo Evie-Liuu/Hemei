@@ -21,61 +21,65 @@
       />
     </div>
 
-    <header class="relative z-5 pt-25 w-full shadow-md bg-header text-rice-500">
-      <div class="container mx-auto flex items-center p-4">
-        <div class="w-1/3">
-          <router-link to="/sdgs" class="back-home-btn">
-            <span class="text">回上頁</span>
-            <span class="icon">←</span>
-          </router-link>
-        </div>
-        <div class="w-1/3 text-center">
-          <h1 class="text-2xl md:text-3xl font-bold">故事牆</h1>
-        </div>
-        <div class="w-1/3"></div>
-      </div>
-    </header>
-    <main
-      class="p-10 flex flex-col justify-center items-center gap-8 max-w-7xl md:mx-auto"
-    >
-      <HeaderFilter
-        @update:filters="handleFilterUpdate"
-        class="flex flex-wrap justify-center items-center gap-4"
-      ></HeaderFilter>
-      <section
-        class="grid grid-cols-1 md:grid-cols-3 gap-5 p-4 md:p-0 md:gap-5"
+    <div class="page-background">
+      <header
+        class="relative z-5 pt-25 w-full shadow-md bg-header text-rice-500"
       >
-        <div
-          class="animate-fade-in-up cursor-pointer w-80 md:mx-auto min-h-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col gap-5 hover:scale-105"
-          v-for="info in paginatedInfos"
-          :key="info.id"
-          @click="goToStory(info.id)"
-        >
-          <img
-            src="@/assets/images/cover.png"
-            alt="Card Image"
-            class="h-45 object-cover"
-          />
-          <div class="p-4 flex flex-col justify-center">
-            <h2 class="text-xl font-bold mb-2">{{ info.title }}</h2>
-            <p class="text-gray-600 text-sm">{{ info.intro }}</p>
-            <p class="text-gray-600 text-sm text-right pe-3">更多</p>
+        <div class="container mx-auto flex items-center p-4">
+          <div class="w-1/3">
+            <router-link to="/sdgs" class="back-home-btn">
+              <span class="text">回上頁</span>
+              <span class="icon">←</span>
+            </router-link>
           </div>
+          <div class="w-1/3 text-center">
+            <h1 class="text-2xl md:text-3xl font-bold">故事牆</h1>
+          </div>
+          <div class="w-1/3"></div>
         </div>
-      </section>
-      <div
-        v-if="allFilteredInfos.length === 0"
-        class="text-center text-gray-500 mt-8"
+      </header>
+      <main
+        class="p-10 flex flex-col justify-center items-center gap-8 max-w-7xl md:mx-auto"
       >
-        <p>找不到符合條件的故事。</p>
-      </div>
-      <PageLabel
-        class="flex justify-center items-center gap-4 mt-8"
-        :totalItems="allFilteredInfos.length"
-        :itemsPerPage="itemsPerPage"
-        v-model="currentPage"
-      ></PageLabel>
-    </main>
+        <HeaderFilter
+          @update:filters="handleFilterUpdate"
+          class="flex flex-wrap justify-center items-center gap-4"
+        ></HeaderFilter>
+        <section
+          class="grid grid-cols-1 md:grid-cols-3 gap-5 p-4 md:p-0 md:gap-5"
+        >
+          <div
+            class="animate-fade-in-up cursor-pointer w-80 md:mx-auto min-h-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col gap-5 hover:scale-105"
+            v-for="info in paginatedInfos"
+            :key="info.id"
+            @click="goToStory(info.id)"
+          >
+            <img
+              src="@/assets/images/cover.png"
+              alt="Card Image"
+              class="h-45 object-cover"
+            />
+            <div class="p-4 flex flex-col justify-center">
+              <h2 class="text-xl font-bold mb-2">{{ info.title }}</h2>
+              <p class="text-gray-600 text-sm">{{ info.intro }}</p>
+              <p class="text-gray-600 text-sm text-right pe-3">更多</p>
+            </div>
+          </div>
+        </section>
+        <div
+          v-if="allFilteredInfos.length === 0"
+          class="text-center text-gray-500 mt-8"
+        >
+          <p>找不到符合條件的故事。</p>
+        </div>
+        <PageLabel
+          class="flex justify-center items-center gap-4 mt-8"
+          :totalItems="allFilteredInfos.length"
+          :itemsPerPage="itemsPerPage"
+          v-model="currentPage"
+        ></PageLabel>
+      </main>
+    </div>
   </div>
 </template>
 <script setup>
@@ -115,8 +119,8 @@ const generateClouds = (count) => {
 };
 
 onMounted(() => {
-  leftClouds.value = generateClouds(10);
-  rightClouds.value = generateClouds(10);
+  // leftClouds.value = generateClouds(10);
+  // rightClouds.value = generateClouds(10);
 });
 
 const allInfos = ref(infosData);
@@ -193,8 +197,10 @@ const goToStory = (id) => {
 <style scoped>
 .actions-wrapper {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* Keep clouds contained */
 }
 
 .cloud-container-left,

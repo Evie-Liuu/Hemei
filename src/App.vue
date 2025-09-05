@@ -42,7 +42,7 @@
         isMenuOpen ? 'h-full' : 'h-0',
         isMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0',
         isMenuOpen
-          ? 'bg-[url(@/assets/images/CS_school.png)] bg-cover bg-center overflow-hidden'
+          ? 'bg-[url(@/assets/images/Mobile/Web_N_Bcakground.png)] bg-cover bg-center overflow-hidden'
           : '',
       ]"
       class="text-white md:text-black md:text-shadow-none"

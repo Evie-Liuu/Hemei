@@ -1,21 +1,23 @@
 <template>
-  <div v-if="isLoading" class="loading-overlay">
-    <img src="" class="loader" alt="Loading..." />
-    <p>載入中...</p>
-  </div>
-  <div class="w-screen h-screen bg-rice-500">
-    <main class="w-full h-full flex justify-center">
-      <iframe
-        src="https://www.thinglink.com/view/scene/2016738261199749797"
-        type="text/html"
-        class="w-full h-full pt-20"
-        style="border: none"
-        webkitallowfullscreen
-        mozallowfullscreen
-        allowfullscreen
-        scrolling="no"
-      ></iframe>
-    </main>
+  <div class="page-background">
+    <div v-if="isLoading" class="loading-overlay">
+      <img src="" class="loader" alt="Loading..." />
+      <p>載入中...</p>
+    </div>
+    <div class="w-screen h-screen bg-rice-500">
+      <main class="w-full h-full flex justify-center">
+        <iframe
+          src="https://www.thinglink.com/view/scene/2016738261199749797"
+          type="text/html"
+          class="w-full h-full pt-20"
+          style="border: none"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+          scrolling="no"
+        ></iframe>
+      </main>
+    </div>
   </div>
 </template>
 <script setup>

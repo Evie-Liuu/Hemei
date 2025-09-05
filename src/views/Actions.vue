@@ -1,5 +1,5 @@
 <template>
-  <div class="actions-wrapper">
+  <div class="actions-wrapper page-background">
     <!-- Left decorative clouds -->
     <div class="cloud-container-left">
       <img
@@ -21,44 +21,48 @@
       />
     </div>
 
-    <header class="relative z-5 pt-25 w-full shadow-md bg-header text-rice-500">
-      <div class="container mx-auto flex items-center p-4">
-        <div class="w-1/3">
-          <router-link to="/" class="back-home-btn">
-            <span class="text">回首頁</span>
-            <span class="icon">←</span>
-          </router-link>
-        </div>
-        <div class="w-1/3 text-center">
-          <h1 class="text-2xl md:text-3xl font-bold">行動追蹤</h1>
-        </div>
-        <div class="w-1/3"></div>
-      </div>
-    </header>
-    <main
-      class="p-10 flex flex-col justify-center items-center gap-8 max-w-7xl md:mx-auto"
-    >
-      <HeaderFilter
-        @update:filters="handleFilterUpdate"
-        class="flex flex-wrap justify-center items-center gap-4"
-      ></HeaderFilter>
-      <ActionCard
-        :filteredInfo="paginatedActions"
-        class="flex flex-col gap-5 w-full px-4 md:px-0"
-      ></ActionCard>
-      <div
-        v-if="allFilteredInfos.length === 0"
-        class="text-center text-gray-500 mt-8"
+    <div class="content-scroller">
+      <header
+        class="relative z-5 pt-25 w-full shadow-md bg-header text-rice-500"
       >
-        <p>找不到符合條件的行動。</p>
-      </div>
-      <PageLabel
-        class="flex justify-center items-center gap-4 mt-8"
-        :totalItems="allFilteredInfos.length"
-        :itemsPerPage="itemsPerPage"
-        v-model="currentPage"
-      ></PageLabel>
-    </main>
+        <div class="container mx-auto flex items-center p-4">
+          <div class="w-1/3">
+            <router-link to="/" class="back-home-btn">
+              <span class="text">回首頁</span>
+              <span class="icon">←</span>
+            </router-link>
+          </div>
+          <div class="w-1/3 text-center">
+            <h1 class="text-2xl md:text-3xl font-bold">行動追蹤</h1>
+          </div>
+          <div class="w-1/3"></div>
+        </div>
+      </header>
+      <main
+        class="p-10 flex flex-col justify-center items-center gap-8 max-w-7xl md:mx-auto"
+      >
+        <HeaderFilter
+          @update:filters="handleFilterUpdate"
+          class="flex flex-wrap justify-center items-center gap-4"
+        ></HeaderFilter>
+        <ActionCard
+          :filteredInfo="paginatedActions"
+          class="flex flex-col gap-5 w-full px-4 md:px-0"
+        ></ActionCard>
+        <div
+          v-if="allFilteredInfos.length === 0"
+          class="text-center text-gray-500 mt-8"
+        >
+          <p>找不到符合條件的行動。</p>
+        </div>
+        <PageLabel
+          class="flex justify-center items-center gap-4 mt-8"
+          :totalItems="allFilteredInfos.length"
+          :itemsPerPage="itemsPerPage"
+          v-model="currentPage"
+        ></PageLabel>
+      </main>
+    </div>
   </div>
 </template>
 <script setup>
@@ -98,8 +102,8 @@ const generateClouds = (count) => {
 };
 
 onMounted(() => {
-  leftClouds.value = generateClouds(10);
-  rightClouds.value = generateClouds(10);
+//   leftClouds.value = generateClouds(10);
+//   rightClouds.value = generateClouds(10);
 });
 
 const allActions = ref(infosData);
@@ -183,8 +187,10 @@ const paginatedActions = computed(() => {
 <style scoped>
 .actions-wrapper {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* Keep clouds contained */
 }
 
 .cloud-container-left,

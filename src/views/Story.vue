@@ -1,5 +1,5 @@
 <template>
-  <div class="actions-wrapper">
+  <div class="actions-wrapper page-background">
     <!-- Left decorative clouds -->
     <div class="cloud-container-left">
       <img
@@ -21,7 +21,7 @@
       />
     </div>
 
-    <div class="page-background">
+    <div class="content-scroller">
       <header
         class="relative z-5 pt-25 w-full shadow-md bg-header text-rice-500"
       >
@@ -191,7 +191,7 @@ const paginatedInfos = computed(() => {
 
 const router = useRouter();
 const goToStory = (id) => {
-  // router.push({ name: "story-detail", params: { id } });
+  router.push({ name: "story-detail", params: { id } });
 };
 </script>
 <style scoped>

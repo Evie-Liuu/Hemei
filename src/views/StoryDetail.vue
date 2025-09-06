@@ -116,7 +116,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref, computed } from "vue";
+import { ref, computed } from "vue";
 import infos from "@/data/Hemei_story.json";
 import typeTags from "@/data/SDGs_goal.json";
 

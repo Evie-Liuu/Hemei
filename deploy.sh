@@ -16,14 +16,10 @@ git init
 git add -A
 git commit -m 'deploy'
 
-# 部署到 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+# 將分支命名為 gh-pages
+git branch -M gh-pages
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-# 以這個專案來講就要改成這樣以下這樣，下面是走 ssh 模式
-# git push -f git@github.com:hsiangfeng/example-vite-react.git master:gh-pages
-# 除此之外，也可以改走 HTTPS 模式
-git push -f https://github.com/Evie-Liuu/Hemei master:gh-pages
+git push -f https://github.com/Evie-Liuu/Hemei gh-pages
 
 cd -

@@ -71,6 +71,17 @@
             >校園探索</span
           >
         </router-link>
+        <router-link to="/test" class="relative"
+          ><img
+            :src="paint3Unselected"
+            class="pointer-events-none select-none"
+            alt="Paint_3"
+          />
+          <span
+            class="absolute inset-0 flex items-center justify-center text-white font-bold ps-5"
+            >Test</span
+          ></router-link
+        >
         <router-link
           to="/actions"
           class="relative"
@@ -99,21 +110,6 @@
           <span
             class="absolute inset-0 flex items-center justify-center text-white font-bold ps-5"
             >SDGs成果</span
-          ></router-link
-        >
-        <router-link
-          to="/test"
-          class="relative"
-          @mouseover="hoveredIndex = 2"
-          @mouseleave="hoveredIndex = null"
-          ><img
-            :src="hoveredIndex === 2 ? paint3Selected : paint3Unselected"
-            class="pointer-events-none select-none"
-            alt="Paint_3"
-          />
-          <span
-            class="absolute inset-0 flex items-center justify-center text-white font-bold ps-5"
-            >Test</span
           ></router-link
         >
       </div>

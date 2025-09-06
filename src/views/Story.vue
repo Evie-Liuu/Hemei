@@ -191,7 +191,7 @@ const paginatedInfos = computed(() => {
 
 const router = useRouter();
 const goToStory = (id) => {
-  router.push({ name: "story-detail", params: { id } });
+  // router.push({ name: "story-detail", params: { id } });
 };
 </script>
 <style scoped>

@@ -1,20 +1,29 @@
-#!/usr/bin/env bash
-# 部署到 GitHub Pages (docs/ 模式)
+#!/usr/bin/env sh
 
-set -e  # 如果有錯就停止執行
+# 發生錯誤時執行終止指令
+set -e
 
-echo "開始建置專案..."
+# 打包編譯
 npm run build
 
-echo "清理舊的 docs/..."
-rm -rf docs
+# 移動到打包資料夾下，若你有調整的話打包後的資料夾請務必調整
+cd dist
 
-echo "搬移 dist/ -> docs/..."
-cp -r dist docs
+# 部署到自定義網域
+# echo 'www.example.com' > CNAME
 
-echo "推送到 GitHub..."
-git add docs
-git commit -m "deploy to GitHub Pages" || echo "⚠️ 沒有變更需要提交"
-git push origin main
+git init
+git add -A
+git commit -m 'deploy'
 
-echo "部署完成！請稍等 GitHub Pages 更新"
+# 部署到 https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+
+# 部署到 https://<USERNAME>.github.io/<REPO>
+# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+# 以這個專案來講就要改成這樣以下這樣，下面是走 ssh 模式
+# git push -f git@github.com:hsiangfeng/example-vite-react.git master:gh-pages
+# 除此之外，也可以改走 HTTPS 模式
+git push -f https://github.com/Evie-Liuu/Hemei master:gh-pages
+
+cd -

@@ -4,7 +4,7 @@
     <div class="relative" ref="sdgDropdownRef">
       <button
         @click="isSdgDropdownOpen = !isSdgDropdownOpen"
-        class="p-1 px-4 rounded-full bg-gray-500 text-brown-100 font-bold min-w-[150px] text-left flex justify-between items-center gap-2"
+        class="p-1 px-4 rounded-full bg-gray-500 text-brown-100 min-w-[150px] text-left flex justify-between items-center gap-2"
       >
         <span v-html="selectedSdgsText" class="truncate"></span>
         <span>▾</span>
@@ -47,7 +47,7 @@
     <div class="relative" ref="timeDropdownRef">
       <button
         @click="isTimeDropdownOpen = !isTimeDropdownOpen"
-        class="p-1 px-4 rounded-full bg-gray-500 text-brown-100 font-bold min-w-[150px] text-left flex justify-between items-center gap-2"
+        class="p-1 px-4 rounded-full bg-gray-500 text-brown-100 min-w-[150px] text-left flex justify-between items-center gap-2"
       >
         <span>{{ timeFilterText }}</span>
         <span>▾</span>

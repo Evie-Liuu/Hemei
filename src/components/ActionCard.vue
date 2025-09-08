@@ -6,9 +6,11 @@
       :key="info.id"
       @click="goToActions(info.id)"
     >
-      <div class="p-6 md:p-15 md:ps-55 flex flex-col justify-center w-full">
-        <h2 class="text-md mb-2">主題：{{ info.title }}</h2>
-        <p class="text-md mb-2">
+      <div
+        class="p-6 md:p-15 md:ps-55 flex flex-col justify-center w-full text-lg"
+      >
+        <h2 class="text-2xl mb-4">主題：{{ info.title }}</h2>
+        <p class="mb-2">
           時間：{{
             info.startTime.length
               ? new Date(info.startTime * 1000).toLocaleDateString() +

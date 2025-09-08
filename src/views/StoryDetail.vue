@@ -13,7 +13,7 @@
           <div class="w-1/3"></div>
         </div>
       </header>
-      <main class="max-w-4xl mx-auto p-4 pt-10">
+      <main class="max-w-4xl mx-auto p-4 pt-10 text-[1.2rem]">
         <section
           class="animate-fade-in-up flex flex-col gap-8"
           v-if="selectedInfo"

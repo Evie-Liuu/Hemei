@@ -67,7 +67,7 @@
             alt="Paint_1"
           />
           <span
-            class="absolute inset-0 flex items-center justify-center text-white font-bold ps-5"
+            class="absolute inset-0 flex items-center justify-center text-white ps-5"
             >校園探索</span
           >
         </router-link>
@@ -82,7 +82,7 @@
             alt="Paint_2"
           />
           <span
-            class="absolute inset-0 flex items-center justify-center text-white font-bold ps-5"
+            class="absolute inset-0 flex items-center justify-center text-white ps-5"
             >SDGs行動</span
           ></router-link
         >
@@ -97,7 +97,7 @@
             alt="Paint_3"
           />
           <span
-            class="absolute inset-0 flex items-center justify-center text-white font-bold ps-5"
+            class="absolute inset-0 flex items-center justify-center text-white ps-5"
             >SDGs成果</span
           ></router-link
         >

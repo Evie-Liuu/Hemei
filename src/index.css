@@ -33,11 +33,22 @@
   --color-gold-400: #CA9404;
   --color-milktea-500: #CBB696;
 
+  --text-xl: 1.5rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.3rem;
+
   --animate-fade-in-left: fadeInLeft 0.8s ease-out forwards;
   --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
 }
 
 
+body {
+  /* font-family: 'YRDZST', sans-serif; */
+  font-family: 'PenCrane', sans-serif;
+  font-size: 1.6rem;
+}
 
 .back-home-btn .icon {
   display: none;

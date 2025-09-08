@@ -13,7 +13,7 @@
     </div>
   </div>
   <nav
-    class="absolute z-10 w-full p-2 font-bold text-rice-500 md:text-4xl flex flex-row justify-between items-center"
+    class="absolute z-10 w-full p-2 text-rice-500 md:text-4xl flex flex-row justify-between items-center"
     :class="[$route.path !== '/' ? 'bg-header' : '']"
   >
     <router-link to="/" @click="isMenuOpen = false" class="flex flex-row gap-2">
@@ -25,7 +25,7 @@
       />
       <div
         :class="{ hidden: $route.path === '/' }"
-        class="relative z-20 my-auto md:text-3xl text-2xl font-hspa"
+        class="relative z-20 my-auto md:text-3xl text-2xl font-hspa font-bold"
       >
         彰化市和美國民小學
       </div>

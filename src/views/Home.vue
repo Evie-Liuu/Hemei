@@ -1,6 +1,6 @@
 <template>
   <main
-    class="relative overflow-y-auto h-screen lg:overflow-y-hidden grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
+    class="relative h-screen grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
   >
     <img
       src="@/assets/images/Frame.png"
@@ -20,7 +20,7 @@
       >
         <img
           src="@/assets/images/ChinesePaintingRing.png"
-          class="pointer-events-none select-none max-w-115 lg:max-w-350"
+          class="pointer-events-none select-none max-w-66 lg:max-w-350"
           alt="Hemei_cover"
         />
       </div>
@@ -34,7 +34,7 @@
             ? 'opacity-100'
             : 'opacity-0',
         ]"
-        class="flex items-right justify-center lg:justify-start lg:gap-5 w-full lg:-ms-13 lg:pt-10"
+        class="flex items-right justify-center lg:justify-start lg:gap-5 w-full lg:-ms-13 lg:pt-20"
       >
         <picture>
           <img
@@ -44,7 +44,7 @@
           />
           <img
             src="@/assets/images/Mobile/Text_H1.png"
-            class="block lg:hidden pointer-events-none select-none max-w-75"
+            class="block lg:hidden pointer-events-none select-none max-w-54"
             alt="Hemei_Text_H"
           />
         </picture>
@@ -57,7 +57,7 @@
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="flex flex-col pt-12 lg:pt-0 lg:gap-5 items-center justify-center"
+        class="flex flex-col pt-8 lg:pt-0 lg:gap-5 items-center justify-center text-xl lg:text-2xl"
       >
         <router-link
           to="/about"
@@ -67,7 +67,7 @@
         >
           <img
             :src="hoveredIndex === 0 ? paint1Selected : paint1Unselected"
-            class="pointer-events-none select-none"
+            class="pointer-events-none select-none w-52 lg:w-auto"
             alt="Paint_1"
           />
           <span
@@ -82,7 +82,7 @@
           @mouseleave="hoveredIndex = null"
           ><img
             :src="hoveredIndex === 1 ? paint2Selected : paint2Unselected"
-            class="pointer-events-none select-none"
+            class="pointer-events-none select-none w-52 lg:w-auto"
             alt="Paint_2"
           />
           <span
@@ -92,12 +92,12 @@
         >
         <router-link
           to="/sdgs"
-          class="relative"
+          class="relative lg:-translate-x-1/6"
           @mouseover="hoveredIndex = 2"
           @mouseleave="hoveredIndex = null"
           ><img
             :src="hoveredIndex === 2 ? paint3Selected : paint3Unselected"
-            class="pointer-events-none select-none"
+            class="pointer-events-none select-none w-52 lg:w-auto"
             alt="Paint_3"
           />
           <span

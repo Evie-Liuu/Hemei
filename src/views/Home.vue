@@ -17,7 +17,7 @@
         class="lg:w-full lg:h-full flex items-center justify-center lg:justify-end lg:pt-5"
       >
         <img
-          src="@/assets/images/ChinesePaintingRing.png"
+          :src="ChinesePaintingRing"
           class="pointer-events-none select-none max-w-66 lg:max-w-350"
           alt="Hemei_cover"
         />
@@ -112,6 +112,7 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
+import ChinesePaintingRing from "@/assets/images/ChinesePaintingRing.png";
 import paint1Unselected from "@/assets/images/Paint_1_Unselected.png";
 import paint1Selected from "@/assets/images/Paint_1_Selected.png";
 import paint2Unselected from "@/assets/images/Paint_2_Unselected.png";

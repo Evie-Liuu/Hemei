@@ -12,9 +12,7 @@
       <div
         :class="[
           'transition-all duration-3000 ease-out',
-          isLoaded
-            ? 'opacity-100'
-            : 'opacity-0',
+          isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
         class="lg:w-full lg:h-full flex items-center justify-center lg:justify-end lg:pt-5"
       >
@@ -30,9 +28,7 @@
       <div
         :class="[
           'transition-all duration-3000 ease-out',
-          isLoaded
-            ? 'opacity-100'
-            : 'opacity-0',
+          isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
         class="flex items-right justify-center lg:justify-start lg:gap-5 w-full lg:-ms-13 lg:pt-20"
       >

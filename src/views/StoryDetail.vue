@@ -1,6 +1,6 @@
 <template>
   <div class="page-background">
-    <div class="content-scroller">
+    <div class="content-scroller" @scroll="handleAppScroll">
       <header class="pt-25 w-full z-10 shadow-md bg-header text-rice-500">
         <div class="container mx-auto flex items-center p-4">
           <div class="w-1/3">
@@ -116,9 +116,11 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, inject } from "vue";
 import infos from "@/data/Hemei_story.json";
 import typeTags from "@/data/SDGs_goal.json";
+
+const handleAppScroll = inject("handleAppScroll");
 
 const props = defineProps({ id: String });
 

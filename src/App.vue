@@ -3,8 +3,14 @@
     v-if="isLoading && $route.path !== '/' && $route.path !== '/about'"
     class="loading-overlay"
   >
-    <img src="" class="loader" alt="Loading..." />
-    <p>Loading...</p>
+    <div class="loading-text">
+      <span style="--i: 1">載</span>
+      <span style="--i: 2">入</span>
+      <span style="--i: 3">中</span>
+      <span style="--i: 4">.</span>
+      <span style="--i: 5">.</span>
+      <span style="--i: 6">.</span>
+    </div>
   </div>
   <nav
     class="absolute z-10 w-full p-2 font-bold text-rice-500 md:text-4xl flex flex-row justify-between items-center"
@@ -53,48 +59,52 @@
         class="px-8 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none bg-brown-400 opacity-80 rounded-full':
+          'pointer-events-none text-white bg-[url(@/assets/images/Paint_3_Unselected.png)] bg-cover bg-center opacity-80':
             $route.path === '/',
         }"
-        >首頁</router-link
       >
+        <div class="p-5 md:p-3">首頁</div>
+      </router-link>
       <router-link
         to="/about"
         class="px-4 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none bg-brown-400  opacity-80 rounded-full':
+          'pointer-events-none text-white bg-[url(@/assets/images/Paint_3_Unselected.png)] bg-cover bg-center opacity-80':
             $route.path === '/about',
           'pointer-events-none bg-gradient-to-br from-green-600 to-yellow-400 opacity-80 rounded-full':
             isMenuOpen && $route.path === '/about',
         }"
-        >校園探索</router-link
       >
+        <div class="p-5 md:p-3">校園探索</div>
+      </router-link>
       <router-link
         to="/actions"
         class="px-4 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none bg-brown-400  opacity-80 rounded-full':
+          'pointer-events-none text-white bg-[url(@/assets/images/Paint_3_Unselected.png)] bg-cover bg-center opacity-80':
             $route.path === '/actions',
           'pointer-events-none bg-gradient-to-br from-green-600 to-yellow-400 opacity-80 rounded-full':
             isMenuOpen && $route.path === '/actions',
         }"
-        >SDGs行動</router-link
       >
+        <div class="p-5 md:p-3">SDGs行動</div>
+      </router-link>
       <router-link
         to="/sdgs"
         class="px-4 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none bg-brown-400 opacity-80 rounded-full':
+          'pointer-events-none text-white bg-[url(@/assets/images/Paint_3_Unselected.png)] bg-cover bg-center opacity-80':
             $route.path === '/sdgs' || $route.path.includes('/story'),
           'pointer-events-none bg-gradient-to-br from-green-600 to-yellow-400 opacity-80 rounded-full':
             isMenuOpen &&
             ($route.path === '/sdgs' || $route.path.includes('/story')),
         }"
-        >SDGs成果</router-link
       >
+        <div class="p-5 md:p-3">SDGs成果</div>
+      </router-link>
     </div>
   </nav>
   <router-view />

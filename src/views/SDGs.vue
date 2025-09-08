@@ -16,7 +16,7 @@
         </div>
       </header>
       <main
-        class="grid grid-cols-1 md:grid-cols-3 gap-5 p-4 md:px-50 pt-10 text-center text-3xl md:min-h-220"
+        class="grid grid-cols-1 md:grid-cols-3 gap-5 p-4 md:px-50 pt-10 text-center text-3xl md:h-3/4"
       >
         <div
           class="group col-span-1 md:col-span-1 h-48 md:h-auto border p-4 bg-[url(@/assets/images/cover_120.jpg)] bg-cover bg-top overflow-hidden flex items-center justify-center animate-fade-in-left animate-delay-100 text-white text-shadow-3d border-black"

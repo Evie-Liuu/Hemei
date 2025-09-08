@@ -1,19 +1,12 @@
 <template>
   <div v-bind="$attrs">
     <div
-      class="animate-fade-in-up cursor-pointer w-full md:max-w-7xl md:mx-auto min-h-96 md:min-h-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row hover:scale-105"
+      class="animate-fade-in-up cursor-pointer w-full md:max-w-7xl md:mx-auto min-h-96 md:min-h-80 bg-milktea-500 text-brown-600 font-bold rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row hover:scale-105"
       v-for="info in filteredInfo"
       :key="info.id"
       @click="goToActions(info.id)"
     >
-      <div class="relative w-full h-64 md:h-auto md:w-1/2">
-        <img
-          src="@/assets/images/cover.png"
-          alt="Card Image"
-          class="absolute inset-0 w-full h-full object-cover object-center"
-        />
-      </div>
-      <div class="p-6 md:p-15 flex flex-col justify-center w-full">
+      <div class="p-6 md:p-15 md:ps-55 flex flex-col justify-center w-full">
         <h2 class="text-md mb-2">主題：{{ info.title }}</h2>
         <p class="text-md mb-2">
           時間：{{
@@ -52,7 +45,18 @@
             {{ typeTags[t].title }}
           </span>
         </div>
-        <p class="text-gray-600 text-sm text-right">更多</p>
+        <!-- <p class="text-gray-600 text-sm text-center">更多</p> -->
+      </div>
+      <div class="relative w-full h-55 md:h-auto md:w-1/2">
+        <div
+          class="absolute bottom-0 left-1/2 -translate-x-1/2 md:right-10 md:left-auto md:translate-x-0"
+        >
+          <img
+            src="@/assets/images/plant_background.png"
+            alt="Card Image"
+            class="inset-0 w-[240px] md:w-[290px]"
+          />
+        </div>
       </div>
     </div>
   </div>

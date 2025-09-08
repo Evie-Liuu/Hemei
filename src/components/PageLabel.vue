@@ -1,5 +1,5 @@
 <template>
-  <div v-if="totalPages > 1">
+  <div v-if="totalPages >= 1">
     <button
       @click="prevPage"
       :disabled="modelValue === 1"

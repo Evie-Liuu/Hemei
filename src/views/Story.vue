@@ -39,7 +39,7 @@
         </div>
       </header>
       <main
-        class="p-10 flex flex-col justify-center items-center gap-8 max-w-7xl md:mx-auto"
+        class="p-10 flex flex-col justify-center items-center gap-8 md:mx-auto"
       >
         <HeaderFilter
           @update:filters="handleFilterUpdate"

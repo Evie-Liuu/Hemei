@@ -13,8 +13,12 @@
     </div>
   </div>
   <nav
-    class="absolute z-10 w-full p-2 text-rice-500 md:text-4xl flex flex-row justify-between items-center"
-    :class="[$route.path !== '/' ? 'bg-header' : '']"
+    class="fixed top-0 left-0 z-10 w-full p-2 text-rice-500 md:text-4xl flex flex-row justify-between items-center transition-transform duration-300 ease-in-out"
+    :class="[
+      $route.path !== '/' ? 'bg-header' : '',
+      isHeaderVisible || isMenuOpen ? 'translate-y-0' : '-translate-y-full',
+      { 'pointer-events-none': !isHeaderVisible && !isMenuOpen },
+    ]"
   >
     <router-link to="/" @click="isMenuOpen = false" class="flex flex-row gap-2">
       <img
@@ -44,8 +48,8 @@
     <div
       v-if="$route.path !== '/'"
       :class="[
-        'fixed top-0 left-0 w-full flex flex-col justify-center items-center gap-8 text-3xl transition-transform duration-300 ease-in-out md:relative md:h-[4rem] md:w-auto md:bg-transparent md:flex-row md:gap-3 md:text-2xl md:whitespace-nowrap',
-        isMenuOpen ? 'h-full' : 'h-0',
+        'fixed top-0 left-0 w-full flex flex-col justify-center items-center gap-8 transition-transform duration-300 ease-in-out md:relative md:h-[4rem] md:w-auto md:bg-transparent md:flex-row md:gap-3 text-xl md:text-2xl md:whitespace-nowrap',
+        isMenuOpen ? 'h-screen' : 'h-0',
         isMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0',
         isMenuOpen
           ? 'bg-[url(@/assets/images/Mobile/Web_N_Bcakground.png)] bg-cover bg-center overflow-hidden'
@@ -63,7 +67,7 @@
             $route.path === '/',
         }"
       >
-        <div class="p-5 md:p-3">首頁</div>
+        <div class="p-3">首頁</div>
       </router-link>
       <router-link
         to="/about"
@@ -76,7 +80,7 @@
             isMenuOpen && $route.path === '/about',
         }"
       >
-        <div class="p-5 md:p-3">校園探索</div>
+        <div class="p-3">校園探索</div>
       </router-link>
       <router-link
         to="/actions"
@@ -89,7 +93,7 @@
             isMenuOpen && $route.path === '/actions',
         }"
       >
-        <div class="p-5 md:p-3">SDGs行動</div>
+        <div class="p-3 md:p-3">SDGs行動</div>
       </router-link>
       <router-link
         to="/sdgs"
@@ -103,22 +107,51 @@
             ($route.path === '/sdgs' || $route.path.includes('/story')),
         }"
       >
-        <div class="p-5 md:p-3">SDGs成果</div>
+        <div class="p-3">SDGs成果</div>
       </router-link>
     </div>
   </nav>
   <router-view />
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, provide, onBeforeUnmount } from "vue";
 
 const isLoading = ref(true);
 const isMenuOpen = ref(false);
+const isHeaderVisible = ref(true);
+const lastScrollY = ref(0);
+
+const handleScroll = (event) => {
+  // Get scroll position from either the event target or the window
+  const currentScrollY =
+    event.target.scrollTop === undefined
+      ? window.scrollY
+      : event.target.scrollTop;
+
+  // Always show header when at the top or if the menu is open
+  if (currentScrollY < 100 || isMenuOpen.value) {
+    isHeaderVisible.value = true;
+  } else if (currentScrollY > lastScrollY.value) {
+    // Scrolling down
+    isHeaderVisible.value = false;
+  } else {
+    // Scrolling up
+    isHeaderVisible.value = true;
+  }
+  lastScrollY.value = currentScrollY < 0 ? 0 : currentScrollY;
+};
+
+provide("handleAppScroll", handleScroll);
 
 onMounted(() => {
+  window.addEventListener("scroll", handleScroll); // Fallback for pages that scroll the window
   setTimeout(() => {
     isLoading.value = false;
   }, 1000);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
 });
 </script>
 <style scoped>

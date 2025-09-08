@@ -7,9 +7,9 @@
       @click="goToActions(info.id)"
     >
       <div
-        class="p-6 md:p-15 md:ps-55 flex flex-col justify-center w-full text-lg"
+        class="p-6 md:p-15 md:ps-55 flex flex-col justify-center w-full md:flex-1 text-sm md:text-lg"
       >
-        <h2 class="text-2xl mb-4">主題：{{ info.title }}</h2>
+        <h2 class="text-xl md:text-2xl mb-2 md:mb-4">主題：{{ info.title }}</h2>
         <p class="mb-2">
           時間：{{
             info.startTime.length
@@ -49,16 +49,14 @@
         </div>
         <!-- <p class="text-gray-600 text-sm text-center">更多</p> -->
       </div>
-      <div class="relative w-full h-55 md:h-auto md:w-1/2">
-        <div
-          class="absolute bottom-0 left-1/2 -translate-x-1/2 md:right-10 md:left-auto md:translate-x-0"
-        >
-          <img
-            src="@/assets/images/plant_background.png"
-            alt="Card Image"
-            class="inset-0 w-[240px] md:w-[290px]"
-          />
-        </div>
+      <div
+        class="w-full md:w-auto flex items-end justify-center md:justify-end md:pr-10"
+      >
+        <img
+          src="@/assets/images/plant_background.png"
+          alt="Card Image"
+          class="w-[170px] md:w-[290px]"
+        />
       </div>
     </div>
   </div>

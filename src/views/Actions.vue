@@ -21,7 +21,7 @@
       />
     </div>
 
-    <div class="content-scroller">
+    <div class="content-scroller" @scroll="handleAppScroll">
       <header
         class="relative z-5 pt-25 w-full shadow-md bg-header text-rice-500"
       >
@@ -66,7 +66,7 @@
   </div>
 </template>
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, inject } from "vue";
 import infosData from "@/data/Hemei_action.json";
 import typeTags from "@/data/SDGs_goal.json";
 import HeaderFilter from "@/components/HeaderFilter.vue";
@@ -105,6 +105,8 @@ onMounted(() => {
 //   leftClouds.value = generateClouds(10);
 //   rightClouds.value = generateClouds(10);
 });
+
+const handleAppScroll = inject("handleAppScroll");
 
 const allActions = ref(infosData);
 const filters = ref({

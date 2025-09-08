@@ -21,7 +21,7 @@
       />
     </div>
 
-    <div class="content-scroller">
+    <div class="content-scroller" @scroll="handleAppScroll">
       <header
         class="relative z-5 pt-25 w-full shadow-md bg-header text-rice-500"
       >
@@ -46,10 +46,10 @@
           class="flex flex-wrap justify-center items-center gap-4"
         ></HeaderFilter>
         <section
-          class="grid grid-cols-1 md:grid-cols-3 gap-5 p-4 md:p-0 md:gap-5"
+          class="grid grid-cols-1 content-center md:grid-cols-3 gap-5 p-4 md:p-0 md:gap-5"
         >
           <div
-            class="animate-fade-in-up cursor-pointer w-80 md:mx-auto min-h-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col gap-5 hover:scale-105"
+            class="animate-fade-in-up cursor-pointer md:mx-auto min-h-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col gap-5 hover:scale-105"
             v-for="info in paginatedInfos"
             :key="info.id"
             @click="goToStory(info.id)"
@@ -83,7 +83,7 @@
   </div>
 </template>
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, inject } from "vue";
 import { useRouter } from "vue-router";
 import infosData from "@/data/Hemei_story.json";
 import typeTags from "@/data/SDGs_goal.json";
@@ -122,6 +122,8 @@ onMounted(() => {
   // leftClouds.value = generateClouds(10);
   // rightClouds.value = generateClouds(10);
 });
+
+const handleAppScroll = inject("handleAppScroll");
 
 const allInfos = ref(infosData);
 const filters = ref({

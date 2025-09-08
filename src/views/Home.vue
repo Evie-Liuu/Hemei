@@ -1,6 +1,6 @@
 <template>
   <main
-    class="relative overflow-y-auto lg:overflow-y-hidden grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
+    class="relative overflow-y-auto h-screen lg:overflow-y-hidden grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
   >
     <img
       src="@/assets/images/Frame.png"
@@ -11,10 +11,10 @@
     <section class="lg:row-span-2">
       <div
         :class="[
-          'transition-all duration-1000 ease-out',
+          'transition-all duration-3000 ease-out',
           isLoaded
-            ? 'opacity-100 translate-x-0'
-            : 'opacity-0 -translate-x-full',
+            ? 'opacity-100'
+            : 'opacity-0',
         ]"
         class="lg:w-full lg:h-full flex items-center justify-center lg:justify-end lg:pt-5"
       >
@@ -29,10 +29,10 @@
     <section class="lg:col-span-1 lg:-ml-48 z-10">
       <div
         :class="[
-          'transition-all duration-1000 ease-out',
+          'transition-all duration-3000 ease-out',
           isLoaded
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-full',
+            ? 'opacity-100'
+            : 'opacity-0',
         ]"
         class="flex items-right justify-center lg:justify-start lg:gap-5 w-full lg:-ms-13 lg:pt-10"
       >
@@ -53,6 +53,10 @@
     <!-- Menu Buttons -->
     <section class="lg:col-span-1 lg:-ml-48 z-10">
       <div
+        :class="[
+          'transition-all duration-3000 ease-out',
+          isLoaded ? 'opacity-100' : 'opacity-0',
+        ]"
         class="flex flex-col pt-12 lg:pt-0 lg:gap-5 items-center justify-center"
       >
         <router-link

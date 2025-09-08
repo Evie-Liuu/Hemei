@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-lg">
     <!-- SDGs Filter -->
     <div class="relative" ref="sdgDropdownRef">
       <button
@@ -24,7 +24,7 @@
             清除選擇
           </button>
         </div>
-        
+
         <div
           v-for="tag in sdgOptions"
           :key="tag.value"

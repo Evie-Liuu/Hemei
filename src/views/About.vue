@@ -13,6 +13,7 @@
     <div class="w-screen h-screen bg-rice-500">
       <main class="w-full h-full flex justify-center">
         <iframe
+          @load="onIframeLoad"
           src="https://www.thinglink.com/view/scene/2016738261199749797"
           type="text/html"
           class="w-full h-full pt-20"
@@ -27,15 +28,13 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 
 const isLoading = ref(true);
 
-onMounted(() => {
-  setTimeout(() => {
-    isLoading.value = false;
-  }, 2000);
-});
+const onIframeLoad = () => {
+  isLoading.value = false;
+};
 </script>
 <style scoped>
 </style>

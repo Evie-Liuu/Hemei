@@ -14,7 +14,7 @@
       class="w-screen h-screen flex justify-center items-center bg-[url('@/assets/images/var02/Mobile_BackColor_N.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/var02/BackColor_N.png')]"
     >
       <div
-        class="relative w-full h-2/3 lg:w-320 lg:h-180 mx-auto translate-y-0 lg:translate-y-13"
+        class="relative w-full h-2/3 lg:w-320 lg:h-180 mx-auto translate-y-0 lg:translate-y-4"
       >
         <iframe
           @load="onIframeLoad"

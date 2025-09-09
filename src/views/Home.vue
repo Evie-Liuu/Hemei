@@ -1,6 +1,6 @@
 <template>
   <main
-    class="relative h-screen grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/var02/Web_v2_Bcakground.webp')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/var02/Backgound_v2_Hemei.webp')]"
+    class="relative h-screen grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center font-bold bg-[url('@/assets/images/var02/Web_v2_Bcakground.webp')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/var02/Backgound_v2_Hemei.webp')]"
   >
     <img
       src="@/assets/images/var02/Frame_v2_Hemei.png"
@@ -14,11 +14,11 @@
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="lg:w-full lg:h-full flex items-center justify-center lg:justify-end lg:pt-5"
+        class="lg:w-full lg:h-full flex items-center justify-center lg:justify-end lg:pt-5 lg:pe-8"
       >
         <img
           :src="ChinesePaintingRing"
-          class="pointer-events-none select-none max-w-66 lg:max-w-350"
+          class="pointer-events-none select-none max-w-66 lg:max-w-280"
           alt="Hemei_cover"
         />
       </div>

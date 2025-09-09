@@ -13,7 +13,7 @@
     </div>
   </div>
   <nav
-    class="fixed top-0 left-0 z-10 w-full p-2 text-rice-500 md:text-4xl flex flex-row justify-between items-center transition-transform duration-300 ease-in-out"
+    class="fixed top-0 left-0 z-10 w-full p-2 text-rice-500 md:text-4xl font-bold flex flex-row justify-between items-center transition-transform duration-300 ease-in-out"
     :class="[
       $route.path !== '/' ? 'bg-header' : '',
       isHeaderVisible || isMenuOpen ? 'translate-y-0' : '-translate-y-full',
@@ -52,7 +52,7 @@
         isMenuOpen ? 'h-screen' : 'h-0',
         isMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0',
         isMenuOpen
-          ? 'bg-[url(@/assets/images/Mobile/Web_N_Bcakground.png)] bg-cover bg-center overflow-hidden'
+          ? 'bg-[url(@/assets/images/var02/Web_v2_N_Bcakground.webp)] bg-cover bg-center overflow-hidden'
           : '',
       ]"
       class="text-white md:text-black md:text-shadow-none"

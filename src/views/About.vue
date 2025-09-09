@@ -10,22 +10,27 @@
         <span style="--i: 6">.</span>
       </div>
     </div>
-    <div
-      class="w-screen h-screen bg-rice-500 bg-[url('@/assets/images/var02/BackColor_N.png')]"
+    <main
+      class="w-screen h-screen flex justify-center items-center bg-[url('@/assets/images/var02/BackColor_N.png')]"
     >
-      <main class="w-full h-full flex justify-center items-center">
+      <div
+        class="relative w-full h-2/3 lg:w-320 lg:h-180 mx-auto translate-y-0 lg:translate-y-13"
+      >
         <iframe
           @load="onIframeLoad"
           src="https://www.thinglink.com/view/scene/2019642406927860198"
           type="text/html"
-          class="w-full h-full lg:w-[62%] lg:h-[71%] mt-12 lg:border-10 border-lightblue"
+          class="w-full h-full"
           webkitallowfullscreen
           mozallowfullscreen
           allowfullscreen
           scrolling="no"
         ></iframe>
-      </main>
-    </div>
+        <div
+          class="absolute inset-0 lg:border-10 border-lightblue pointer-events-none"
+        ></div>
+      </div>
+    </main>
   </div>
 </template>
 <script setup>

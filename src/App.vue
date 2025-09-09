@@ -29,7 +29,7 @@
       />
       <div
         :class="{ hidden: $route.path === '/' }"
-        class="relative z-20 my-auto md:text-3xl text-2xl font-hspa font-bold"
+        class="relative z-20 my-auto md:text-3xl text-2xl"
       >
         彰化市和美國民小學
       </div>

@@ -11,10 +11,10 @@
       </div>
     </div>
     <main
-      class="w-screen h-screen flex justify-center items-center bg-[url('@/assets/images/var02/Mobile_BackColor_N.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/var02/BackColor_N.png')]"
+      class="absolute bottom-0 w-screen h-screen lg:max-h-280 flex justify-center items-center bg-center overflow-hidden bg-no-repeat bg-[url('@/assets/images/var02/Mobile_BackColor_N.png')] bg-cover lg:bg-[url('@/assets/images/var02/BackColor_N.png')] lg:bg-auto"
     >
       <div
-        class="relative w-full h-2/3 lg:w-320 lg:h-180 mx-auto translate-y-0 lg:translate-y-4"
+        class="relative w-full h-2/3 2xl:w-320 2xl:h-180 mx-auto translate-y-0 2xl:translate-y-4"
       >
         <iframe
           @load="onIframeLoad"
@@ -27,7 +27,7 @@
           scrolling="no"
         ></iframe>
         <div
-          class="absolute inset-0 lg:border-10 border-pblue-100 pointer-events-none"
+          class="absolute inset-0 2xl:border-10 border-pblue-100 pointer-events-none"
         ></div>
       </div>
     </main>

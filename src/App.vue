@@ -20,19 +20,29 @@
       { 'pointer-events-none': !isHeaderVisible && !isMenuOpen },
     ]"
   >
-    <router-link to="/" @click="isMenuOpen = false" class="flex flex-row gap-2">
+    <router-link
+      to="/"
+      @click="isMenuOpen = false"
+      class="flex flex-row items-center gap-2"
+    >
       <img
         src="@/assets/images/Logo.png"
         alt="School Logo Watercolor"
         :class="{ hidden: $route.path === '/' }"
-        class="relative z-20 inset-0 w-1/11 object-end md:w-1/15"
+        class="relative z-20 inset-0 w-1/11 object-center md:w-1/15"
       />
-      <div
+      <!-- <div
         :class="{ hidden: $route.path === '/' }"
         class="relative z-20 my-auto md:text-3xl text-2xl"
       >
         彰化市和美國民小學
-      </div>
+      </div> -->
+      <img
+        src="@/assets/images/var02/Title.png"
+        alt=""
+        :class="{ hidden: $route.path === '/' }"
+        class="relative z-20 inset-0 max-h-10 object-end md:w-auto md:max-h-15"
+      />
     </router-link>
 
     <!-- Hamburger Button -->

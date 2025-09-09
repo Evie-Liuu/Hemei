@@ -45,7 +45,10 @@
   --color-gold-400: #CA9404;
   --color-milktea-500: #CBB696;
 
-  --color-lightblue: #B5D4D3;
+  --color-darkblue: #192A51;
+  --color-pblue-100: #B5D4D3;
+  --color-pblue-300: #82A0B8;
+  --color-pblue-700: #192A51;
 
   --text-xl: 1.5rem;
   --text-2xl: 1.75rem;
@@ -66,7 +69,8 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 1.6rem;
-  letter-spacing: 0.05em; /* 增加字距，視覺上變細 */
+  letter-spacing: 0.05em;
+  /* 增加字距，視覺上變細 */
   /* color: transparent; */
   /* -webkit-text-stroke: 0.1px #000; */
 }
@@ -92,9 +96,15 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("@/assets/images/Backgound_N.webp");
+  background-image: url("@/assets/images/var02/Backgound_v2_N_Hemei.webp");
   background-size: cover;
   background-position: center;
+}
+
+@media (max-width: 768px) {
+  .page-background {
+    background-image: url("@/assets/images/var02/Web_v2_N_Bcakground.webp");
+  }
 }
 
 .content-scroller {
@@ -117,7 +127,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(245, 245, 220, 0.9);
+  background-color: rgba(244, 240, 237, 0.9);
   /* 使用與主題相符的米色背景 */
   display: flex;
   justify-content: center;
@@ -128,7 +138,7 @@ body {
 .loading-text {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #5d4037;
+  color: #192A51;
   /* 使用與主題相符的棕色文字 */
   display: flex;
 }

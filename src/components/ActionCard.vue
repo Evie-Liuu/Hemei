@@ -1,7 +1,7 @@
 <template>
   <div v-bind="$attrs">
     <div
-      class="animate-fade-in-up cursor-pointer w-full md:max-w-7xl md:mx-auto min-h-96 md:min-h-80 bg-milktea-500 text-brown-600 font-bold rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row hover:scale-105"
+      class="animate-fade-in-up cursor-pointer w-full md:max-w-7xl md:mx-auto min-h-96 md:min-h-80 bg-pblue-300 text-pblue-700 font-bold rounded-xl shadow-md overflow-hidden flex flex-col md:flex-row hover:scale-105"
       v-for="info in filteredInfo"
       :key="info.id"
       @click="goToActions(info.id)"

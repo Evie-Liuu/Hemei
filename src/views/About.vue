@@ -16,7 +16,7 @@
           @load="onIframeLoad"
           src="https://www.thinglink.com/view/scene/2019642406927860198"
           type="text/html"
-          class="w-full h-full pt-20"
+          class="w-full h-full lg:w-[95%] lg:h-[95%] pt-25"
           style="border: none"
           webkitallowfullscreen
           mozallowfullscreen

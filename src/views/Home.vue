@@ -1,6 +1,6 @@
 <template>
   <main
-    class="relative h-screen grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.png')]"
+    class="relative h-screen grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.webp')]"
   >
     <img
       src="@/assets/images/Frame.png"
@@ -112,7 +112,7 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
-import ChinesePaintingRing from "@/assets/images/ChinesePaintingRing.png";
+import ChinesePaintingRing from "@/assets/images/ChinesePaintingRing.webp";
 import paint1Unselected from "@/assets/images/Paint_1_Unselected.png";
 import paint1Selected from "@/assets/images/Paint_1_Selected.png";
 import paint2Unselected from "@/assets/images/Paint_2_Unselected.png";

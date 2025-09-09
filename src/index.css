@@ -84,7 +84,7 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("@/assets/images/Backgound_N.png");
+  background-image: url("@/assets/images/Backgound_N.webp");
   background-size: cover;
   background-position: center;
 }

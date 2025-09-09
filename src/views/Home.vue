@@ -1,9 +1,9 @@
 <template>
   <main
-    class="relative h-screen grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/Mobile/Web_Bcakground.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/Backgound.webp')]"
+    class="relative h-screen grid lg:grid-flow-col content-center lg:content-stretch lg:grid-rows-2 text-center bg-[url('@/assets/images/var02/Web_v2_Bcakground.webp')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/var02/Backgound_v2_Hemei.webp')]"
   >
     <img
-      src="@/assets/images/Frame.png"
+      src="@/assets/images/var02/Frame_v2_Hemei.png"
       alt="Top Frame"
       class="hidden lg:block absolute -top-3 left-0 w-full h-10 object-cover z-20 pointer-events-none"
     />
@@ -34,12 +34,12 @@
       >
         <picture>
           <img
-            src="@/assets/images/Text_H.png"
+            src="@/assets/images/var02/var02.png"
             class="hidden lg:block pointer-events-none select-none max-w-50"
             alt="Hemei_Text_H"
           />
           <img
-            src="@/assets/images/Mobile/Text_H1.png"
+            src="@/assets/images/var02/Text_H1_v2_Hemei.png"
             class="block lg:hidden pointer-events-none select-none max-w-54"
             alt="Hemei_Text_H"
           />
@@ -104,7 +104,7 @@
       </div>
     </section>
     <img
-      src="@/assets/images/Frame.png"
+      src="@/assets/images/var02/Frame_v2_Hemei.png"
       alt="Bottom Frame"
       class="hidden lg:block absolute -bottom-3 left-0 w-full h-10 object-cover rotate-180 z-20 pointer-events-none"
     />
@@ -112,13 +112,13 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
-import ChinesePaintingRing from "@/assets/images/ChinesePaintingRing.webp";
-import paint1Unselected from "@/assets/images/Paint_1_Unselected.png";
-import paint1Selected from "@/assets/images/Paint_1_Selected.png";
-import paint2Unselected from "@/assets/images/Paint_2_Unselected.png";
-import paint2Selected from "@/assets/images/Paint_2_Selected.png";
-import paint3Unselected from "@/assets/images/Paint_3_Unselected.png";
-import paint3Selected from "@/assets/images/Paint_3_Selected.png";
+import ChinesePaintingRing from "@/assets/images/var02/ChinesePaintingRing_v2_Hemei.webp";
+import paint1Unselected from "@/assets/images/var02/Paint_1_v2_Unselected.png";
+import paint1Selected from "@/assets/images/var02/Paint_1_v2_Selected.png";
+import paint2Unselected from "@/assets/images/var02/Paint_2_v2_Unselected.png";
+import paint2Selected from "@/assets/images/var02/Paint_2_v2_Selected.png";
+import paint3Unselected from "@/assets/images/var02/Paint_3_v2_Unselected.png";
+import paint3Selected from "@/assets/images/var02/Paint_3_v2_Selected.png";
 
 const hoveredIndex = ref(null);
 const isLoaded = ref(false);

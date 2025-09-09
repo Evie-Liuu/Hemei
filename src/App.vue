@@ -63,7 +63,7 @@
         class="px-8 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none text-white bg-[url(@/assets/images/Paint_3_Unselected.png)] bg-cover bg-center opacity-80':
+          'pointer-events-none text-white bg-[url(@/assets/images/var02/Paint_3_v2_Selected.png)] bg-cover bg-center opacity-80':
             $route.path === '/',
         }"
       >
@@ -74,7 +74,7 @@
         class="px-4 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none text-white bg-[url(@/assets/images/Paint_3_Unselected.png)] bg-cover bg-center opacity-80':
+          'pointer-events-none text-white bg-[url(@/assets/images/var02/Paint_3_v2_Selected.png)] bg-cover bg-center opacity-80':
             $route.path === '/about',
           'pointer-events-none bg-gradient-to-br from-green-600 to-yellow-400 opacity-80 rounded-full':
             isMenuOpen && $route.path === '/about',
@@ -87,7 +87,7 @@
         class="px-4 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none text-white bg-[url(@/assets/images/Paint_3_Unselected.png)] bg-cover bg-center opacity-80':
+          'pointer-events-none text-white bg-[url(@/assets/images/var02/Paint_3_v2_Selected.png)] bg-cover bg-center opacity-80':
             $route.path === '/actions',
           'pointer-events-none bg-gradient-to-br from-green-600 to-yellow-400 opacity-80 rounded-full':
             isMenuOpen && $route.path === '/actions',
@@ -100,7 +100,7 @@
         class="px-4 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none text-white bg-[url(@/assets/images/Paint_3_Unselected.png)] bg-cover bg-center opacity-80':
+          'pointer-events-none text-white bg-[url(@/assets/images/var02/Paint_3_v2_Selected.png)] bg-cover bg-center opacity-80':
             $route.path === '/sdgs' || $route.path.includes('/story'),
           'pointer-events-none bg-gradient-to-br from-green-600 to-yellow-400 opacity-80 rounded-full':
             isMenuOpen &&

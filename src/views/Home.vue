@@ -14,17 +14,22 @@
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="lg:w-full lg:h-full flex items-center justify-center lg:justify-end lg:pt-5 lg:pe-8"
+        class="lg:w-full lg:h-full flex items-center justify-center lg:justify-start lg:pe-8"
       >
         <img
           :src="ChinesePaintingRing"
-          class="pointer-events-none select-none max-w-66 lg:max-w-280"
+          class="hidden lg:block pointer-events-none select-none"
+          alt="Hemei_cover"
+        />
+        <img
+          :src="ChinesePaintingRing_mobile"
+          class="block lg:hidden pointer-events-none select-none"
           alt="Hemei_cover"
         />
       </div>
     </section>
     <!-- School Title -->
-    <section class="lg:col-span-1 lg:-ml-48 z-10">
+    <section class="lg:col-span-1 lg:-ml-123 lg:mt-17 z-10">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
@@ -47,7 +52,7 @@
       </div>
     </section>
     <!-- Menu Buttons -->
-    <section class="lg:col-span-1 lg:-ml-48 z-10">
+    <section class="lg:col-span-1 lg:-ml-143 lg:-mt-10 z-10">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
@@ -88,7 +93,7 @@
         >
         <router-link
           to="/sdgs"
-          class="relative lg:-translate-x-1/6"
+          class="relative -translate-x-1/6"
           @mouseover="hoveredIndex = 2"
           @mouseleave="hoveredIndex = null"
           ><img
@@ -112,7 +117,8 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
-import ChinesePaintingRing from "@/assets/images/var02/ChinesePaintingRing_v2_Hemei.webp";
+import ChinesePaintingRing from "@/assets/images/var02/ChinesePaintingRing_v2_Hemei_2.webp";
+import ChinesePaintingRing_mobile from "@/assets/images/var02/Mobile_ChinesePaintingRing_v2_Hemei2.png";
 import paint1Unselected from "@/assets/images/var02/Paint_1_v2_Unselected.png";
 import paint1Selected from "@/assets/images/var02/Paint_1_v2_Selected.png";
 import paint2Unselected from "@/assets/images/var02/Paint_2_v2_Unselected.png";

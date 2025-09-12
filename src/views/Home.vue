@@ -29,7 +29,7 @@
       </div>
     </section>
     <!-- School Title -->
-    <section class="lg:col-span-1 lg:-ml-123 lg:mt-17 z-10">
+    <section class="lg:col-span-1 lg:-ml-138 lg:mt-17 z-10">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
@@ -52,7 +52,7 @@
       </div>
     </section>
     <!-- Menu Buttons -->
-    <section class="lg:col-span-1 lg:-ml-143 lg:-mt-10 z-10">
+    <section class="lg:col-span-1 lg:-ml-178 lg:-mt-10 z-10">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
